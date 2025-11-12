@@ -3,8 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "pnpm install",
+    "start:gateway": "pnpm --filter gateway run start",
+    "start:task": "pnpm --filter task run start",
+    "start:token": "pnpm --filter token run start",
+    "start:user": "pnpm --filter user run start",
+    "start:dev:gateway": "pnpm --filter gateway run start:dev",
+    "start:dev:task": "pnpm --filter task run start:dev",
+    "start:dev:token": "pnpm --filter token run start:dev",
+    "start:dev:user": "pnpm --filter user run start:dev",
+    "start:dev": "pnpm -r run start:dev",
+    "start": "pnpm -r run start",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test"
   },
   "keywords": [],
   "author": "",
